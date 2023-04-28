@@ -1,5 +1,9 @@
 body {
     margin: 0;
+<<<<<<< HEAD
+    background: darkgray;
+=======
     background: lightgray;
+>>>>>>> 3bb26fe863ac070463cd9dd67efc74f87c8e7693
     text-align: center;
 }
