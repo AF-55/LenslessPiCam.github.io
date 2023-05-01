@@ -58,7 +58,7 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas similique nobis blanditiis reprehenderit minima consectetur, repudiandae numquam laboriosam nam cum nihil minus porro id illo. Eligendi nisi quisquam quas nesciunt.
         <br>
         The edge detection was done by using the Canny edge detection implemented in the <a href="https://docs.opencv.org/3.4/da/d22/tutorial_py_canny.html">OpenCV</a> library. The basic Perlin noise is to blurry for it to work, we made the edges more easily detectable by taking the "square root" of the noise:
-        $$ \forall i,j, ~ \sqrt{N}(i,j) = \text{sgn} (N(i,j)) \cdot \left| N(i,j) \right| ^{\frac{1}{2}} = \begin{cases} \begin{aligned} N(i,j)^{\frac{1}{2}} & \quad \text{if } N(i,j) \geq 0 \\ -N(i,j)^{\frac{1}{2}} & \text{otherwise} \end{aligned} \end{cases} $$
+        $$ \forall i,j, ~ \sqrt{N}(i,j) = \text{sgn} (N(i,j)) \cdot \left| N(i,j) \right| ^{\frac{1}{2}} = \begin{cases} \begin{aligned} N(i,j)^{\frac{1}{2}} \quad & \text{if } N(i,j) \geq 0 \\ -N(i,j)^{\frac{1}{2}} & \text{otherwise} \end{aligned} \end{cases} $$
         <br>
         <img src="images/edge_detection.png" height="250">
         <!--<img src="images/perlin_noise.png" height="250"> <img src="images/perlin_abs.png" height="250"> <img src="images/perlin_minus_abs.png" height="250">-->
