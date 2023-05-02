@@ -35,19 +35,23 @@
     -->
 
     <h2>An overview on lensless imaging</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta enim molestias accusantium beatae ducimus. Voluptate inventore, earum hic nemo cupiditate laboriosam, unde distinctio ullam eaque quo recusandae provident tenetur iusto.</p>
-    
+    <p>
+        Lensless imaging, also known as computational imaging, is a type of imaging technology that does not use traditional lenses to capture images. Instead, it relies on complex algorithms and mathematical models to reconstruct images from the patterns of light that are captured by an image sensor. This approach allows for the creation of extremely thin and flexible cameras, which can be used in a wide range of applications, including medical imaging, industrial inspection, and consumer electronics.
+        One of the key advantages of lensless imaging is its ability to capture high-resolution images of objects that are too small or too far away to be seen with traditional lenses. This makes it an important tool for scientific research, where it can be used to image microorganisms, nanoparticles, and other tiny objects. It is also useful for industrial inspection applications, where it can be used to detect defects in materials and structures.</p>
+    <br>
 
     <h2>Mask design</h2>
 
     <h3><a href="https://arxiv.org/abs/1509.00116"><b>FlatCam</b></a></h3>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas similique nobis blanditiis reprehenderit minima consectetur, repudiandae numquam laboriosam nam cum nihil minus porro id illo. Eligendi nisi quisquam quas nesciunt.
-        <br>
+    </p>>
+    <p>    
         <a href="https://en.wikipedia.org/wiki/Modified_Uniformly_Redundant_Array"><b>Modified Uniformly Redundant Arrays (MURA)</b></a>: blablablablablablablablablablablablabla. The code to obtain such masks was inspired from the code available in <a href="https://github.com/kkretschmer/MURA.jl">this repository</a>.
         <br>
         <img src="images/MURA_101.png" height="250"> <img src="images/MURA_197.png" height="250"> <img src="images/MURA_293.png" height="250"> <img src="images/MURA_397.png" height="250">
-        <br>
+    </p>
+    <p>
         <a href="https://en.wikipedia.org/wiki/Maximum_length_sequence"><b>Maximum length sequences (MLS)</b></a>: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque eos beatae minus esse sed perferendis dignissimos temporibus incidunt nisi, earum nulla a modi dolorem sequi aspernatur eaque ex doloremque? In.
         <br>
         <img src="images/MLS_5bits.png" height="250"> <img src="images/MLS_6bits.png" height="250"> <img src="images/MLS_7bits.png" height="250"> <img src="images/MLS_8bits.png" height="250">
@@ -57,27 +61,25 @@
     <h3><a href="https://ieeexplore.ieee.org/document/9076617"><b>PhlatCam</b></a></h3>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas similique nobis blanditiis reprehenderit minima consectetur, repudiandae numquam laboriosam nam cum nihil minus porro id illo. Eligendi nisi quisquam quas nesciunt.
-        <br>
+    </p>
+    <p>
         The edge detection was done by using the Canny edge detection implemented in the <a href="https://docs.opencv.org/3.4/da/d22/tutorial_py_canny.html">OpenCV</a> library. The basic Perlin noise is to blurry for it to work, we made the edges more easily detectable by taking the "square root" of the noise:
         $$ \forall i,j, ~ \sqrt{N}(i,j) = \text{sgn} (N(i,j)) \cdot \left| N(i,j) \right| ^{\frac{1}{2}} = \begin{cases} \begin{array}{cr} N(i,j)^{\frac{1}{2}} & \text{if } N(i,j) \geq 0 \\ -N(i,j)^{\frac{1}{2}} & \text{otherwise} \end{array} \end{cases} $$
-        <br>
-        <img src="images/edge_detection_dim256x256_res8x8.png" height="250">
-        <br>
-        <img src="images/edge_detection_dim512x512_res16x16.png" height="250">
-        <!--<img src="images/perlin_noise.png" height="250"> <img src="images/perlin_abs.png" height="250"> <img src="images/perlin_minus_abs.png" height="250">-->
     </p>
+    <img src="images/edge_detection_dim256x256_res8x8.png" height="250">
+    <br>
+    <img src="images/edge_detection_dim512x512_res16x16.png" height="250">
     <br>
 
     <h3><a href="https://www.nature.com/articles/s41377-020-0289-9"><b>Fresnel Zone Aperture</b></a></h3>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas similique nobis blanditiis reprehenderit minima consectetur, repudiandae numquam laboriosam nam cum nihil minus porro id illo. Eligendi nisi quisquam quas nesciunt.
-        <br>
         $$ M(r) = \frac{1 + \cos (\pi r^2)}{2 R^2}$$
         <br>
         The code to obtain such masks war inspired from the code available in <a href="https://github.com/THUHoloLab/FZA_lensless_imaging">this repository</a>.
         <br>
-        <img src="images/fza_dim510x255_r30.png" height="300">
     </p>
+    <img src="images/fza_dim510x255_r30.png" height="300">
     
 
 
