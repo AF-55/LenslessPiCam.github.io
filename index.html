@@ -42,9 +42,9 @@
 
     <h2>Mask design</h2>
 
-    <h3><a href="https://arxiv.org/abs/1509.00116"><b>FlatCam</b></a></h3>
+    <h3><b>Coded aperture</b> (seen in the <a href="https://arxiv.org/abs/1509.00116">FlatCam</a> article)</h3>
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas similique nobis blanditiis reprehenderit minima consectetur, repudiandae numquam laboriosam nam cum nihil minus porro id illo. Eligendi nisi quisquam quas nesciunt.
+        Coded apertures are masks that contain a specific pattern of transparent and opaque elements that allow only certain portions of the incoming light or radiation to pass through.
     </p>
     <p>    
         <a href="https://en.wikipedia.org/wiki/Modified_Uniformly_Redundant_Array"><b>Modified Uniformly Redundant Arrays (MURA)</b></a>: 
@@ -71,13 +71,15 @@
     </p>
     <br>
 
-    <h3><a href="https://ieeexplore.ieee.org/document/9076617"><b>PhlatCam</b></a></h3>
+    <h3><b>Phase contour</b> (seen in the <a href="https://ieeexplore.ieee.org/document/9076617">PlatCam</a> article)</h3>
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas similique nobis blanditiis reprehenderit minima consectetur, repudiandae numquam laboriosam nam cum nihil minus porro id illo. Eligendi nisi quisquam quas nesciunt.
+        Unlike coded apertures or Fresnel zone apertures, phase contour masks are not amplitude masks, they are phase masks: 
+        there are no occlusions, but thickness changes throughout the mask, making the phase of the incoming light changed in the same manner. 
     </p>
     <p>
-        The edge detection was done by using the Canny edge detection implemented in the <a href="https://docs.opencv.org/3.4/da/d22/tutorial_py_canny.html">OpenCV</a> library. The basic Perlin noise is to blurry for it to work, we made the edges more easily detectable by taking the "square root" of the noise:
-        $$ \forall i,j, ~ \sqrt{N}(i,j) = \text{sgn} (N(i,j)) \cdot \left| N(i,j) \right| ^{\frac{1}{2}} = \begin{cases} \begin{array}{cr} N(i,j)^{\frac{1}{2}} & \text{if } N(i,j) \geq 0 \\ -N(i,j)^{\frac{1}{2}} & \text{otherwise} \end{array} \end{cases} $$
+        The phase contour computation is done by detecting the edges of a <a href="https://en.wikipedia.org/wiki/Perlin_noise">Perlin noise</a> (a smooth, continuous pattern characterized by subtle changes in value and spatial coherence). 
+        The edge detection was done by using the Canny edge detection implemented in the <a href="https://docs.opencv.org/3.4/da/d22/tutorial_py_canny.html">OpenCV</a> library. 
+        Since the basic Perlin noise is to blurry for it to work, we made the edges more easily detectable by mapping the values from [-1,1] to [0,1] and round the noise so that is becomes binary.
     </p>
     <img src="images/edge_detection_dim256x256_res8x8.png" height="250">
     <br>
@@ -86,13 +88,15 @@
 
     <h3><a href="https://www.nature.com/articles/s41377-020-0289-9"><b>Fresnel Zone Aperture</b></a></h3>
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas similique nobis blanditiis reprehenderit minima consectetur, repudiandae numquam laboriosam nam cum nihil minus porro id illo. Eligendi nisi quisquam quas nesciunt.
-        $$ M(r) = \frac{1 + \cos (\pi r^2)}{2 R^2}$$
+        A Fresnel zone aperture (FZA) is a mask that contains a series of concentric circular rings. 
+        It operates on the principle of diffraction: the concentric rings of the zone plate are designed to create constructive and destructive interference patterns, which can be used to focus or manipulate light.
+        We computed the FZA pattern by using the following formula, and then rounded it to make it binary:
+        $$M(r) = \frac{1 + \cos (\pi r^2)}{2 R^2}$$
         <br>
         The code to obtain such masks war inspired from the code available in <a href="https://github.com/THUHoloLab/FZA_lensless_imaging">this repository</a>.
         <br>
     </p>
-    <img src="images/fza_dim510x255_r30.png" height="300">
+    <img src="images/fza_dim4096x3040_r300.png" height="300">
     
 
 
