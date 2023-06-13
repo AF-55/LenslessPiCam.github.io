@@ -57,7 +57,7 @@
         Those patterns also have good autocorrelation properties, meaning that the pattern is highly correlated with itself when shifted by small amounts. 
         This property is useful for tasks such as image registration and pattern recognition.
         <br>
-        <img src="images/MURA_101.png" height="250"> <img src="images/MURA_197.png" height="250"> <img src="images/MURA_293.png" height="250"> <img src="images/MURA_397.png" height="250">
+        <img src="images/masks/MURA_101.png" height="250"> <img src="images/masks/MURA_197.png" height="250"> <img src="images/masks/MURA_293.png" height="250"> <img src="images/masks/MURA_397.png" height="250">
     </p>
     <p>
         <a href="https://en.wikipedia.org/wiki/Maximum_length_sequence"><b>Maximum length sequences (MLS)</b></a>: they are a type of pseudorandom binary sequence i.e. binary sequences that have a maximum possible length for a given number of binary digits.
@@ -67,7 +67,7 @@
         Like MURA patterns, MLS have good autocorrelation properties, which means that the sequence is highly correlated with itself when shifted by small amounts, which is useful in applications such as channel estimation and synchronization. 
         Furthermore, MLS also have good cross-correlation properties, which means that the sequence is not correlated with other MLS when shifted by small amounts, which is useful in applications such as cryptography.
         <br>
-        <img src="images/MLS_5bits.png" height="250"> <img src="images/MLS_6bits.png" height="250"> <img src="images/MLS_7bits.png" height="250"> <img src="images/MLS_8bits.png" height="250">
+        <img src="images/masks/MLS_5bits.png" height="250"> <img src="images/masks/MLS_6bits.png" height="250"> <img src="images/masks/MLS_7bits.png" height="250"> <img src="images/masks/MLS_8bits.png" height="250">
     </p>
     <br>
 
@@ -81,9 +81,9 @@
         The edge detection was done by using the Canny edge detection implemented in the <a href="https://docs.opencv.org/3.4/da/d22/tutorial_py_canny.html">OpenCV</a> library. 
         Since the basic Perlin noise is to blurry for it to work, we made the edges more easily detectable by mapping the values from [-1,1] to [0,1] and round the noise so that is becomes binary.
     </p>
-    <img src="images/edge_detection_dim256x256_res8x8.png" height="250">
+    <img src="images/masks/edge_detection_dim256x256_res8x8.png" height="250">
     <br>
-    <img src="images/edge_detection_dim512x512_res16x16.png" height="250">
+    <img src="images/masks/edge_detection_dim512x512_res16x16.png" height="250">
     <br>
 
     <h3><a href="https://www.nature.com/articles/s41377-020-0289-9"><b>Fresnel Zone Aperture</b></a></h3>
@@ -96,7 +96,7 @@
         The code to obtain such masks war inspired from the code available in <a href="https://github.com/THUHoloLab/FZA_lensless_imaging">this repository</a>.
         <br>
     </p>
-    <img src="images/fza_dim4096x3040_r300.png" height="300">
+    <img src="images/masks/fza_dim4096x3040_r300.png" height="300">
     
 
 
