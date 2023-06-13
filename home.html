@@ -65,38 +65,36 @@
 
     <h2>Lensless imaging at LCAV</h2>
     <p>
-        <ul>
-            <li>
-                <b>Setting up the Raspberry Pi and HQ sensor</b>: 
-                To setup the RPi, we need to install the Raspberry Pi OS and connect the RPi to a WiFi network, which can be done without any external display, according to <a href="https://medium.com/@bezzam/setting-up-a-raspberry-pi-without-a-monitor-headless-9a3c2337f329">this tutorial</a>. 
-                It is then necessary to setup SSH'ing without a password, as in <a href="https://medium.com/@bezzam/headless-and-passwordless-interfacing-with-a-raspberry-pi-ssh-453dd75154c3">this tutorial</a>, in order for the remote capture and display scripts provided in the <a href="https://github.com/LCAV/LenslessPiCam">LenslessPiCam GitHub repository</a>.
-            </li>
-            <li>
-                <b>Building LenslessPiCam</b>: 
-                With the RPi and sensor setup, we can proceed to building LenslessPiCam! <a href="https://medium.com/@bezzam/building-a-diffusercam-with-the-raspberry-hq-camera-cardboard-and-tape-896b6020aff6">This tutorial</a> explains how to do just that with the HQ sensor, cardboard, electric tape and doubled sided tape. We really recommend using this type of tape (doubled-sided tape as the lens replacement and electric tape for cropping / holding things together) as we found it gave the best results.
-                While assembling LenslessPiCam, it will be useful to have a point source to help with creating the aperture (i.e. cropping). In <a href="https://medium.com/@bezzam/measuring-an-optical-psf-with-an-arduino-an-led-and-a-cardboard-box-2f3ddac660c1">this tutorial</a>, we describe how to build one from an Arduino, a white LED, common electric components, and a cardboard box. A point source will also be needed to perform imaging.
-            </li>
-            <li>
-                <b>Performing imaging</b>: 
-                This is the part when we take pictures. 
-                <a href="https://medium.com/@bezzam/measuring-a-diffusercam-psf-and-raw-data-b01ee29eda4">This tutorial</a> describes how to take measurements with LenslessPiCam, using scripts from the GitHub repository.
-                In <a href="https://medium.com/@bezzam/lensless-imaging-with-the-raspberry-pi-and-python-diffusercam-473e47662857">this tutorial</a>, we describe in more detail how to digitally reconstruct an image from the raw measurements. We also suggest some extension / exercises that can be done. 
-                If you are an instructor and would like the solutions, you can request access <a href="https://drive.google.com/drive/folders/1Y1scM8wVfjVAo5-8Nr2VfE4b6VHeDSia?usp=sharing">here</a> or send an email to <span style="font-family: 'Courier New', Courier, monospace">eric[dot]bezzam[at]epfl[dot]ch</span>.
-            </li>
-            <li>
-                <b>Evaluating the reconstructions</b>: 
-                In the <a href="https://github.com/LCAV/LenslessPiCam">repository</a>, we provide a <a href="https://github.com/LCAV/LenslessPiCam/blob/main/scripts/remote_display.py">script</a> to remotely display pictures on an external monitor. 
-                This can be useful for creating a small dataset to evaluate different reconstruction techniques.
-                In <a href="https://medium.com/@bezzam/image-similarity-metrics-applied-to-diffusercam-21998967af8d">this tutorial</a>, we present different metrics that can be used for evaluating reconstructions, and present a dataset that can be used for evaluating different reconstruction strategies.
-            </li>
-        </ul>
+        
+        
+        <h5>Setting up the Raspberry Pi and HQ sensor</h5>: 
+        To setup the RPi, we need to install the Raspberry Pi OS and connect the RPi to a WiFi network, which can be done without any external display, according to <a href="https://medium.com/@bezzam/setting-up-a-raspberry-pi-without-a-monitor-headless-9a3c2337f329">this tutorial</a>. 
+        It is then necessary to setup SSH'ing without a password, as in <a href="https://medium.com/@bezzam/headless-and-passwordless-interfacing-with-a-raspberry-pi-ssh-453dd75154c3">this tutorial</a>, in order for the remote capture and display scripts provided in the <a href="https://github.com/LCAV/LenslessPiCam">LenslessPiCam GitHub repository</a>.
+        <br>
+        
+        <h5>Building LenslessPiCam</h5>: 
+        With the RPi and sensor setup, we can proceed to building LenslessPiCam! <a href="https://medium.com/@bezzam/building-a-diffusercam-with-the-raspberry-hq-camera-cardboard-and-tape-896b6020aff6">This tutorial</a> explains how to do just that with the HQ sensor, cardboard, electric tape and doubled sided tape. We really recommend using this type of tape (doubled-sided tape as the lens replacement and electric tape for cropping / holding things together) as we found it gave the best results.
+        While assembling LenslessPiCam, it will be useful to have a point source to help with creating the aperture (i.e. cropping). In <a href="https://medium.com/@bezzam/measuring-an-optical-psf-with-an-arduino-an-led-and-a-cardboard-box-2f3ddac660c1">this tutorial</a>, we describe how to build one from an Arduino, a white LED, common electric components, and a cardboard box. A point source will also be needed to perform imaging.
+        <br>
+        
+        <h5>Performing imaging</h5>: 
+        This is the part when we take pictures. 
+        <a href="https://medium.com/@bezzam/measuring-a-diffusercam-psf-and-raw-data-b01ee29eda4">This tutorial</a> describes how to take measurements with LenslessPiCam, using scripts from the GitHub repository.
+        In <a href="https://medium.com/@bezzam/lensless-imaging-with-the-raspberry-pi-and-python-diffusercam-473e47662857">this tutorial</a>, we describe in more detail how to digitally reconstruct an image from the raw measurements. We also suggest some extension / exercises that can be done. 
+        If you are an instructor and would like the solutions, you can request access <a href="https://drive.google.com/drive/folders/1Y1scM8wVfjVAo5-8Nr2VfE4b6VHeDSia?usp=sharing">here</a> or send an email to <span style="font-family: 'Courier New', Courier, monospace">eric[dot]bezzam[at]epfl[dot]ch</span>.
+        <br>
+        
+        <h5>Evaluating the reconstructions</h5>: 
+        In the <a href="https://github.com/LCAV/LenslessPiCam">repository</a>, we provide a <a href="https://github.com/LCAV/LenslessPiCam/blob/main/scripts/remote_display.py">script</a> to remotely display pictures on an external monitor. 
+        This can be useful for creating a small dataset to evaluate different reconstruction techniques.
+        In <a href="https://medium.com/@bezzam/image-similarity-metrics-applied-to-diffusercam-21998967af8d">this tutorial</a>, we present different metrics that can be used for evaluating reconstructions, and present a dataset that can be used for evaluating different reconstruction strategies.
     </p>
     <!--<br>-->
     <figure>
         <img src="images/front_page/raspberry-pi.png" height="250", width="333"> <img src="images/front_page/tape.png" height="250", width="333">
         <br>
         <img src="images/front_page/psf-experiment.png" height="250", width="333"> <img src="images/front_page/example-reconstructions.png" height="250", width="333">
-        <figcaption>(1) HQ camera connected to a Raspberry Pi. (2) Tape-constructed lensless camera. (3) PSF measurement setup. (4) Example reconstructions. Images by E.Bezzam (LCAV).</figcaption>
+        <figcaption>(1) HQ camera connected to a Raspberry Pi. (2) Tape-constructed lensless camera. (3) Point-spread function (PSF) measurement setup. (4) Example reconstructions. Images by E.Bezzam (LCAV).</figcaption>
     </figure>
     
 
