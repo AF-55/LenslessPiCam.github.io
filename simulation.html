@@ -23,6 +23,23 @@
             padding: 3px;
             text-align: center;
         }
+        .image-table {
+            border-collapse: collapse;
+        }
+        .image-table th,
+        .image-table td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .image-table img {
+            display: block;
+            max-width: 100%;
+        }
+        .table-caption {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
     </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -58,7 +75,33 @@
     </p>
 
 
-    
+    <table class="image-table">
+        <caption class="table-caption">My Image Table</caption>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+        <tr>
+            <td>
+                <img src="images/dataset_simulation/000018-tape.png" alt="Image 1">
+                <p>Text for Image 1</p>
+            </td>
+            <td>
+                <img src="images/dataset_simulation/000018-mura.png" alt="Image 2">
+                <p>Text for Image 2</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="images/dataset_simulation/000018-mls.png" alt="Image 3">
+                <p>Text for Image 3</p>
+            </td>
+            <td>
+                <img src="images/dataset_simulation/000018-fza.png" alt="Image 4">
+                <p>Text for Image 4</p>
+            </td>
+        </tr>
+    </table>
 
     
     <!--
