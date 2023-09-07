@@ -23,6 +23,16 @@
             padding: 3px;
             text-align: center;
         }
+        table {
+            margin: 0 auto; /* Centre le tableau horizontalement */
+            border-collapse: collapse; /* Fusionne les bordures de la table */
+            width: 60%; /* Largeur du tableau */
+        }
+        th, td {
+            border: 1px solid black; /* Ajoute une bordure à toutes les cellules */
+            text-align: center; /* Centre le texte dans les cellules */
+            padding: 8px; /* Espacement interne des cellules */
+        }
         .table-container {
             display: flex;
             justify-content: center;
@@ -176,50 +186,48 @@
         </table>
     </div>
 
-    <div class="errors">
-        <table>
-            <tr>
-            <th><b>Mask</b></th>
-            <th><b>Tape</b></th>
-            <th><b>MURA</b></th>
-            <th><b>MLS</b></th>
-            <th><b>Phase</b></th>
-            <th><b>FZA</b></th>
-            </tr>
-            <tr>
-                <td><b>MSE</b></td>
-                <td>0.067</td>
-                <td>0.070</td>
-                <td>0.069</td>
-                <td>0.053</td>
-                <td>0.053</td>
-            </tr>
-            <tr>
-            <td><b>PSNR</b></td>
-            <td>12.81</td>
-            <td>12.55</td>
-            <td>12.53</td>
-            <td>13.70</td>
-            <td>14.16</td>
-            </tr>
-            <tr>
-            <td><b>SSIM</b></td>
-            <td>0.407</td>
-            <td>0.492</td>
-            <td>0.484</td>
-            <td>0.503</td>
-            <td>0.492</td>
-            </tr>
-            <tr>
-            <td><b>LPIPS</b></td>
-            <td>0.553</td>
-            <td>0.561</td>
-            <td>0.570</td>
-            <td>0.546</td>
-            <td>0.566</td>
-            </tr>
-        </table>
-    </div>
+    <table>
+        <tr>
+          <th><b>Mask</b></th>
+          <th><b>Tape</b></th>
+          <th><b>MURA</b></th>
+          <th><b>MLS</b></th>
+          <th><b>Phase</b></th>
+          <th><b>FZA</b></th>
+        </tr>
+        <tr>
+            <td><b>MSE</b></td>
+            <td>0.067</td>
+            <td>0.070</td>
+            <td>0.069</td>
+            <td>0.053</td>
+            <td>0.053</td>
+          </tr>
+        <tr>
+          <td><b>PSNR</b></td>
+          <td>12.81</td>
+          <td>12.55</td>
+          <td>12.53</td>
+          <td>13.70</td>
+          <td>14.16</td>
+        </tr>
+        <tr>
+          <td><b>SSIM</b></td>
+          <td>0.407</td>
+          <td>0.492</td>
+          <td>0.484</td>
+          <td>0.503</td>
+          <td>0.492</td>
+        </tr>
+        <tr>
+          <td><b>LPIPS</b></td>
+          <td>0.553</td>
+          <td>0.561</td>
+          <td>0.570</td>
+          <td>0.546</td>
+          <td>0.566</td>
+        </tr>
+    </table>
     
 
 
