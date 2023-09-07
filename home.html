@@ -48,13 +48,14 @@
     Click <a href="https://github.com/LCAV/LenslessPiCam">here</a> to take a look at the LenslessPiCam GitHub repository.
     -->
     <br>
-    <a href="/LenslessPiCamWeb/home.html">Home</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/LenslessPiCamWeb/masks.html">Mask design</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/LenslessPiCamWeb/simulation.html">Simulation</a>
+    <a href="/LenslessPiCamWeb/home.html">Home</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/LenslessPiCamWeb/tutorial.html">Tutorial</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/LenslessPiCamWeb/masks.html">Mask design</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/LenslessPiCamWeb/simulation.html">Simulation</a>
     <br><br><br>
 
     <h2>An overview on lensless imaging</h2>
     <p>
-        Lensless imaging, also known as computational imaging, is a type of imaging technology that does not use traditional lenses to capture images. Instead, it relies on complex algorithms and mathematical models to reconstruct images from the patterns of light that are captured by an image sensor. This approach allows for the creation of extremely thin and flexible cameras, which can be used in a wide range of applications, including medical imaging, industrial inspection, and consumer electronics.
-        One of the key advantages of lensless imaging is its ability to capture high-resolution images of objects that are too small or too far away to be seen with traditional lenses. This makes it an important tool for scientific research, where it can be used to image microorganisms, nanoparticles, and other tiny objects. It is also useful for industrial inspection applications, where it can be used to detect defects in materials and structures.
+        The fundamental idea behind lensless imaging is to replace a bulky and costly lens with a mask of equivalent size to the image sensor. 
+        However, while the lens gathers a considerable amount of light to capture sharp images, the mask alone is insufficient to produce such results. 
+        Therefore, it becomes necessary to employ a reconstruction algorithm to best restore the desired image from the limited amount of light and subtle variations collected through the mask.
     </p>
     <!--<br>-->
     <figure>
@@ -63,42 +64,39 @@
     </figure>
     <br>
 
-    <h2>Lensless imaging at LCAV</h2>
+    <h3>Pros and cons</h3>
+
     <p>
-        
-        
-        <h3>Setting up the Raspberry Pi and HQ sensor</h3>
-        To setup the RPi, we need to install the Raspberry Pi OS and connect the RPi to a WiFi network, which can be done without any external display, according to <a href="https://medium.com/@bezzam/setting-up-a-raspberry-pi-without-a-monitor-headless-9a3c2337f329">this tutorial</a>. 
-        It is then necessary to setup SSH'ing without a password, as in <a href="https://medium.com/@bezzam/headless-and-passwordless-interfacing-with-a-raspberry-pi-ssh-453dd75154c3">this tutorial</a>, in order for the remote capture and display scripts provided in the <a href="https://github.com/LCAV/LenslessPiCam">LenslessPiCam GitHub repository</a>.
-        <br>
-        
-        <h3>Building LenslessPiCam</h3>
-        With the RPi and sensor setup, we can proceed to building LenslessPiCam! <a href="https://medium.com/@bezzam/building-a-diffusercam-with-the-raspberry-hq-camera-cardboard-and-tape-896b6020aff6">This tutorial</a> explains how to do just that with the HQ sensor, cardboard, electric tape and doubled sided tape. We really recommend using this type of tape (doubled-sided tape as the lens replacement and electric tape for cropping / holding things together) as we found it gave the best results.
-        While assembling LenslessPiCam, it will be useful to have a point source to help with creating the aperture (i.e. cropping). In <a href="https://medium.com/@bezzam/measuring-an-optical-psf-with-an-arduino-an-led-and-a-cardboard-box-2f3ddac660c1">this tutorial</a>, we describe how to build one from an Arduino, a white LED, common electric components, and a cardboard box. A point source will also be needed to perform imaging.
-        <br>
-        
-        <h3>Performing imaging</h3>
-        This is the part when we take pictures. 
-        <a href="https://medium.com/@bezzam/measuring-a-diffusercam-psf-and-raw-data-b01ee29eda4">This tutorial</a> describes how to take measurements with LenslessPiCam, using scripts from the GitHub repository.
-        In <a href="https://medium.com/@bezzam/lensless-imaging-with-the-raspberry-pi-and-python-diffusercam-473e47662857">this tutorial</a>, we describe in more detail how to digitally reconstruct an image from the raw measurements. We also suggest some extension / exercises that can be done. 
-        If you are an instructor and would like the solutions, you can request access <a href="https://drive.google.com/drive/folders/1Y1scM8wVfjVAo5-8Nr2VfE4b6VHeDSia?usp=sharing">here</a> or send an email to <span style="font-family: 'Courier New', Courier, monospace">eric[dot]bezzam[at]epfl[dot]ch</span>.
-        <br>
-        
-        <h3>Evaluating the reconstructions</h3>
-        In the <a href="https://github.com/LCAV/LenslessPiCam">repository</a>, we provide a <a href="https://github.com/LCAV/LenslessPiCam/blob/main/scripts/remote_display.py">script</a> to remotely display pictures on an external monitor. 
-        This can be useful for creating a small dataset to evaluate different reconstruction techniques.
-        In <a href="https://medium.com/@bezzam/image-similarity-metrics-applied-to-diffusercam-21998967af8d">this tutorial</a>, we present different metrics that can be used for evaluating reconstructions, and present a dataset that can be used for evaluating different reconstruction strategies.
+        The primary advantage of using lensless cameras lies in their compactness. 
+        Unlike traditional lensed cameras, which require a certain distance between the lens and the sensor for focusing, lensless cameras can operate without a lens.
     </p>
-    <!--<br>-->
-    <figure>
-        <img src="images/front_page/raspberry-pi.png" height="250", width="333"> <img src="images/front_page/tape.png" height="250", width="333">
-        <br>
-        <img src="images/front_page/psf-experiment.png" height="250", width="333"> <img src="images/front_page/example-reconstructions.png" height="250", width="333">
-        <figcaption>(1) HQ camera connected to a Raspberry Pi. (2) Tape-constructed lensless camera. (3) Point-spread function (PSF) measurement setup. (4) Example reconstructions. Images by E.Bezzam (LCAV).</figcaption>
-    </figure>
-    
-
-
+    <p>
+        Lensless cameras are characterized by their compactness and lightness compared to conventional devices. 
+        While traditional lenses have lengths of a few centimeters, the distance between a mask and the sensor in a lensless camera would be on the order of a millimeter. 
+        This reduction in size naturally leads to a lighter device, as well as a more affordable manufacturing and purchasing cost.
+    </p>
+    <p>
+        Moreover, the measurements captured in a lensless camera are inherently blurred and unclear, enhancing privacy levels, as reconstructing the image would require precise knowledge of the camera's parameters.
+    </p>
+    <p>
+        In lensless imaging, the dimensions of the mask and the sensor are identical, opening the door to the development of sensors with unconventional proportions, such as elongated sensors. 
+        This technology offers adaptability and flexibility that conventional imaging does not possess.
+    </p>
+    <p>
+        A subtle yet significant advantage of lensless imaging lies in the balance between resolution and field of view, a particularly essential consideration in microscopy. 
+        Unlike conventional imaging methods where the field of view can be limited, lensless imaging offers a field of view limited only by the size of the sensor. 
+        This means that high resolution can be achieved across the entire captured image, a crucial aspect for microscopy applications where precision and visual scope are paramount.
+    </p>
+    <p>
+        Finally, lensless sensors can be used in compressive sensing approaches because they do not focus light from one point to another but map a point in the scene to multiple points on the sensor. 
+        This allows for the reconstruction of higher-resolution images than the sensor's resolution or higher-dimensional quantities, such as 3D imaging or hyperspectral imaging, or the reconstruction of videos from 2D instantaneous measurements. 
+    </p>
+    <p>
+        However, despite the reduction in size, weight, and cost by removing the lens, it comes with a major drawback: image quality. 
+        The sensor's size limits light collection, resulting in unclear images during capture and imperfect reconstruction. 
+        Additionally, the dependence on computational reconstruction algorithms, which can be time-consuming (in the case of iterative algorithms) or require extensive training data (in the case of machine learning methods), often limits real-time imaging. 
+        These reasons make lensed cameras the preferred method for now.
+    </p>
 
 
 </body>
